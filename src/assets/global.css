@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { @apply scroll-smooth transition-all font-outfit }
+
+body { @apply bg-background }
