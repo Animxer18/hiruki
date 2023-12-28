@@ -3,5 +3,8 @@
 @tailwind utilities;
 
 * { @apply scroll-smooth transition-all font-outfit }
-
 body { @apply bg-background }
+
+::-webkit-scrollbar { @apply w-1 }
+::-webkit-scrollbar-track { @apply bg-background }
+::-webkit-scrollbar-thumb { @apply bg-primary rounded-sm hover:bg-secondary }

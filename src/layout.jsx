@@ -5,12 +5,10 @@ export default function Layout(props) {
         <>
             <section className="flex justify-around items-center p-4">
                 <A href="/" className="text-primary text-3xl font-semibold lowercase hover:text-white">Hiruki</A>
-                <div className="hidden md:flex items-center gap-4">
+                <div className="flex items-center gap-4">
                     <A href="/" className="text-white text-sm font-medium hover:text-primary">Home</A>
-                    <A href="/" className="text-white text-sm font-medium hover:text-primary">This Season</A>
-                    <A href="/" className="text-white text-sm font-medium hover:text-primary">Schedule</A>
+                    <A href="/" className="text-white text-sm font-medium hover:text-primary">Search</A>
                 </div>
-                <A href="/" className="text-white text-sm font-medium hover:underline">Search</A>
             </section>
             {props.children}
             <section className="bg-subackground flex flex-col md:flex-row justify-evenly md:items-center gap-4 p-4">
@@ -28,15 +26,11 @@ export default function Layout(props) {
                         <A href="/" className="text-white text-base md:text-sm font-medium 
                         hover:text-primary">Home</A>
                         <A href="/" className="text-white text-base md:text-sm font-medium 
-                        hover:text-primary">This Season</A>
-                        <A href="/" className="text-white text-base md:text-sm font-medium 
-                        hover:text-primary">Schedule</A>
+                        hover:text-primary">Search</A>
                     </div>
                     <div className="flex flex-col gap-2">
                         <A href="/" className="text-white text-base md:text-sm font-medium 
                         hover:text-primary">DMCA</A>
-                        <A href="/" className="text-white text-base md:text-sm font-medium 
-                        hover:text-primary">Donate</A>
                         <A href="/" className="text-white text-base md:text-sm font-medium 
                         hover:text-primary">Github</A>
                     </div>
