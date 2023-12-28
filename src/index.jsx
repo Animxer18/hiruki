@@ -7,7 +7,7 @@ import Landing from "./pages/index";
 render(() =>
     <Router>
         <Route path={"/"} component={Layout}>
-            <Route path={"/"} component={<Landing />} />
+            <Route path={"/"} component={Landing} />
         </Route>
     </Router>,
     document.getElementById("root"));
