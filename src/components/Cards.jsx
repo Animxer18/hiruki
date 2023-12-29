@@ -13,7 +13,7 @@ export default function Cards(props) {
                         <Show when={props.data}>
                             <For each={props.data.results}>
                                 {(e, i) => (
-                                    <A href={""} key={i}>
+                                    <A href={"/i/" + e.id} key={i()}>
                                         <img src={e.coverImage.large} alt={e.title.romaji} title={e.title.romaji}
                                             loading="eager" width="500" height="300"
                                             className="w-40 h-56 md:w-52 md:h-72 object-cover rounded-md hover:scale-95" />

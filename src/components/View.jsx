@@ -13,7 +13,7 @@ export default function View(props) {
                             <For each={props.data.results}>
                                 {(e, i) => (
                                     <Show when={e.bannerImage}>
-                                        <div key={i} className="relative">
+                                        <div key={i()} className="relative">
                                             <img src={e.bannerImage} alt={e.title.romaji} title={e.title.romaji}
                                                 loading="eager" width="500" height="300"
                                                 className="w-full h-64 object-cover rounded-md opacity-35" />
@@ -25,7 +25,7 @@ export default function View(props) {
                                                     <p className="text-white text-sm font-semibold">{e.status}</p>
                                                 </div>
                                                 <p innerHTML={e.description}
-                                                    className="text-white w-full h-32 overflow-y-scroll opacity-75 pr-2" />
+                                                    className="text-white w-full h-36 overflow-y-auto opacity-75 pr-2" />
                                             </div>
                                         </div>
                                     </Show>

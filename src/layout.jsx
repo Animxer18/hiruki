@@ -31,7 +31,8 @@ export default function Layout(props) {
                     <div className="flex flex-col gap-2">
                         <A href="/" className="text-white text-base md:text-sm font-medium 
                         hover:text-primary">DMCA</A>
-                        <A href="/" className="text-white text-base md:text-sm font-medium 
+                        <A href="https://github.com/Kenimarru/hiruki" target="_blank"
+                            className="text-white text-base md:text-sm font-medium 
                         hover:text-primary">Github</A>
                     </div>
                 </div>
