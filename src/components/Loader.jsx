@@ -89,3 +89,16 @@ export function EpisodesLoader(props) {
         </>
     )
 }
+
+export function StreamLoader(props) {
+    return (
+        <>
+            <section className="flex justify-start p-4">
+                <div className="bg-white bg-opacity-25 w-64 h-12 rounded-md animate-pulse" />
+            </section>
+            <section className="flex justify-center items-center py-4 px-4">
+                <div className="bg-white bg-opacity-25 w-full h-40 md:h-[450px] rounded-md animate-pulse" />
+            </section>
+        </>
+    )
+}

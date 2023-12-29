@@ -1,4 +1,5 @@
 import { Show, createSignal } from "solid-js";
+import { A } from "@solidjs/router";
 import { EpisodesLoader } from "./Loader";
 
 export default function Episodes(props) {
@@ -17,12 +18,12 @@ export default function Episodes(props) {
                             <div className="flex flex-wrap justify-center gap-4">
                                 <For each={props.data.episodes.slice(0, count())}>
                                     {(e, i) => (
-                                        <div key={i()}>
+                                        <A href={"/e/" + e.id + "?id=" + props.id} key={i()}>
                                             <div className="text-white bg-subackground border-transparent border-2 
                                         text-sm font-medium flex justify-center items-center text-center 
                                         w-24 h-10 md:w-24 md:h-12 rounded-md 
                                         hover:border-primary hover:cursor-pointer">EP {e.number}</div>
-                                        </div>
+                                        </A>
                                     )}
                                 </For>
                                 <Show when={props.data.episodes.length > 24 && count() === 24}>

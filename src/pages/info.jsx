@@ -99,7 +99,7 @@ export default function Info(props) {
             </Show>
             <Show when={!episodes.loading} fallback={<EpisodesLoader count={new Array(24)} />}>
                 <Show when={episodes() && !episodes.loading}>
-                    <Episodes container="Episodes" data={episodes()} />
+                    <Episodes container="Episodes" data={episodes()} id={params.id} />
                 </Show>
             </Show>
             <Show when={!recommendations.loading} fallback={<CardsLoader count={new Array(6)} />} />

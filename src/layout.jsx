@@ -11,31 +11,12 @@ export default function Layout(props) {
                 </div>
             </section>
             {props.children}
-            <section className="bg-subackground flex flex-col md:flex-row justify-evenly md:items-center gap-4 p-4">
-                <div className="flex flex-col gap-2">
-                    <div className="flex flex-col">
-                        <h1 className="text-white text-sm opacity-50">
-                            This site does not store any files on our server..</h1>
-                        <p className="text-white text-sm opacity-50">
-                            We only linked to the media which is hosted on 3rd party services.</p>
-                    </div>
-                    <h2 className="text-white text-3xl font-medium lowercase">Hiruki</h2>
-                </div>
-                <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-                    <div className="flex flex-col gap-2">
-                        <A href="/" className="text-white text-base md:text-sm font-medium 
-                        hover:text-primary">Home</A>
-                        <A href="/" className="text-white text-base md:text-sm font-medium 
-                        hover:text-primary">Search</A>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <A href="/" className="text-white text-base md:text-sm font-medium 
-                        hover:text-primary">DMCA</A>
-                        <A href="https://github.com/Kenimarru/hiruki" target="_blank"
-                            className="text-white text-base md:text-sm font-medium 
-                        hover:text-primary">Github</A>
-                    </div>
-                </div>
+            <section className="bg-subackground flex flex-col justify-center items-center gap-2 p-4">
+                <h1 className="text-white text-4xl font-semibold">Hiruki</h1>
+                <p className="text-white text-sm text-center text-opacity-50">
+                    This site does not store any files on our server,
+                    we only linked to the media which is hosted on 3rd party services.</p>
+                <p className="text-white text-sm text-center">&copy;{new Date().getFullYear()}. Hiruki</p>
             </section>
         </>
     )
