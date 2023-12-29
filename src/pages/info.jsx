@@ -1,10 +1,15 @@
 import { For, Show, createResource } from "solid-js";
 import { A, useParams } from "@solidjs/router";
+import { CardsLoader, EpisodesLoader, InfoLoader } from "../components/Loader";
+import Episodes from "../components/Episodes";
 import Cards from "../components/Cards";
-import { CardsLoader, InfoLoader } from "../components/Loader";
 
 const getInfo = async (id) => {
     return (await fetch(import.meta.env.VITE_API_V2 + "/info/" + id)).json();
+}
+
+const getEpisodes = async (id) => {
+    return (await fetch(import.meta.env.VITE_API_V2 + "/episode/" + id)).json();
 }
 
 const getRecommendations = async (id) => {
@@ -16,6 +21,7 @@ export default function Info(props) {
     const params = useParams();
 
     const [info] = createResource(() => params.id, getInfo);
+    const [episodes] = createResource(() => params.id, getEpisodes);
     const [recommendations] = createResource(() => params.id, getRecommendations);
 
     return (
@@ -35,10 +41,10 @@ export default function Info(props) {
                             loading="eager" width="500" height="300"
                             className="w-52 h-72 object-cover rounded-md" />
                         <A href={info().siteUrl} target="_blank"
-                            className="text-white border-primary border-2 w-52 rounded-md 
+                            className="text-white bg-subackground border-primary border-2 w-52 rounded-md 
                                 pt-0.5 pb-1 px-2 hover:bg-primary">View on Anilist</A>
                         <A href={"https://myanimelist.net/anime/" + info().idMal} target="_blank"
-                            className="text-white border-primary border-2 w-52 rounded-md 
+                            className="text-white bg-subackground border-primary border-2 w-52 rounded-md 
                                 pt-0.5 pb-1 px-2 hover:bg-primary">View on MAL</A>
                     </div>
                     <div className="flex md:flex-1 flex-col gap-2">
@@ -82,14 +88,17 @@ export default function Info(props) {
                         </Show>
                         <div className="flex md:hidden flex-col items-center text-center gap-2">
                             <A href={info().siteUrl} target="_blank"
-                                className="text-white border-primary border-2 w-full rounded-md 
+                                className="text-white bg-subackground border-primary border-2 w-full rounded-md 
                                 pt-0.5 pb-1 px-2 hover:bg-primary">View on Anilist</A>
                             <A href={"https://myanimelist.net/anime/" + info().idMal} target="_blank"
-                                className="text-white border-primary border-2 w-full rounded-md 
+                                className="text-white bg-subackground border-primary border-2 w-full rounded-md 
                                 pt-0.5 pb-1 px-2 hover:bg-primary">View on MAL</A>
                         </div>
                     </div>
                 </section>
+            </Show>
+            <Show when={!episodes.loading} fallback={<EpisodesLoader count={new Array(24)} />}>
+                <Episodes container="Episodes" data={episodes()} />
             </Show>
             <Show when={!recommendations.loading} fallback={<CardsLoader count={new Array(6)} />} />
             <Show when={recommendations() && !recommendations.loading}>

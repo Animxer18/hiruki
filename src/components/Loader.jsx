@@ -61,3 +61,31 @@ export function InfoLoader(props) {
         </>
     )
 }
+
+export function EpisodesLoader(props) {
+    return (
+        <>
+            <section className="flex flex-col my-4">
+                <div className="flex justify-start items-center py-4 px-5 md:px-4">
+                    <div className="bg-white bg-opacity-25 w-60 h-8 rounded-md animate-pulse" />
+                </div>
+                <div className="flex justify-center items-center">
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <For each={props.count}>
+                            {(e, i) => (
+                                <div key={i()}>
+                                    <div
+                                        className="bg-white bg-opacity-25 w-24 h-10 md:w-24 md:h-12 
+                                        rounded-md animate-pulse" />
+                                </div>
+                            )}
+                        </For>
+                        <div className="w-full px-4">
+                            <div className="bg-white bg-opacity-25 w-full h-8 rounded-md animate-pulse" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
