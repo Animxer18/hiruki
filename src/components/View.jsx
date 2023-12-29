@@ -1,7 +1,8 @@
-import "solid-slider/slider.css";
+import { Show } from "solid-js";
 import { SliderProvider, Slider } from "solid-slider";
 import { autoplay } from "solid-slider/plugins/autoplay";
-import { Show } from "solid-js";
+import "solid-slider/slider.css";
+import { ViewLoader } from "./Loader";
 
 export default function View(props) {
     return (
@@ -9,7 +10,7 @@ export default function View(props) {
             <section className="hidden md:flex p-4">
                 <SliderProvider>
                     <Slider options={{ loop: true, drag: true }} plugins={[autoplay(5000, {})]}>
-                        <Show when={props.data}>
+                        <Show when={props.data} fallback={<ViewLoader />}>
                             <For each={props.data.results}>
                                 {(e, i) => (
                                     <Show when={e.bannerImage}>
@@ -21,11 +22,12 @@ export default function View(props) {
                                                 <h2 className="text-white text-2xl font-semibold">{e.title.romaji}</h2>
                                                 <div className="flex items-center gap-2">
                                                     <p className="text-white text-sm font-semibold">{e.format}</p>
-                                                    <span className="text-white text-sm opacity-75">❖</span>
+                                                    <span className="text-white text-opacity-50 text-sm">❖</span>
                                                     <p className="text-white text-sm font-semibold">{e.status}</p>
                                                 </div>
                                                 <p innerHTML={e.description}
-                                                    className="text-white w-full h-36 overflow-y-auto opacity-75 pr-2" />
+                                                    className="text-white text-opacity-75 w-full h-36 
+                                                    overflow-y-auto pr-2" />
                                             </div>
                                         </div>
                                     </Show>
