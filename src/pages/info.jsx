@@ -26,7 +26,7 @@ export default function Info(props) {
 
     return (
         <>
-        <Show when={!info.loading} fallback={<InfoLoader />} />
+            <Show when={!info.loading} fallback={<InfoLoader />} />
             <Show when={info() && !info.loading}>
                 <Show when={info().bannerImage}>
                     <section className="flex justify-center items-center p-4">
@@ -98,7 +98,9 @@ export default function Info(props) {
                 </section>
             </Show>
             <Show when={!episodes.loading} fallback={<EpisodesLoader count={new Array(24)} />}>
-                <Episodes container="Episodes" data={episodes()} />
+                <Show when={episodes() && !episodes.loading}>
+                    <Episodes container="Episodes" data={episodes()} />
+                </Show>
             </Show>
             <Show when={!recommendations.loading} fallback={<CardsLoader count={new Array(6)} />} />
             <Show when={recommendations() && !recommendations.loading}>
