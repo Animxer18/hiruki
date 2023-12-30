@@ -1,0 +1,23 @@
+{
+    "name": "Hiruki",
+    "short_name": "Hiruki",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "theme_color": "#141519",
+    "background_color": "#141519",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+}

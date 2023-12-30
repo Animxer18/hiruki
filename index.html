@@ -6,7 +6,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Hiruki is an online anime streaming platform for free without interruptions or ads!" />
+    <meta name="description"
+        content="Hiruki is an online anime streaming platform for free without interruptions or ads!" />
     <meta name="keywords" content="anime, streaming, anime streaming, watch, watch anime, subbed anime, dubbed anime" />
     <link rel="canonical" href="https://www.hiruki.xyz">
     <meta name="robots" content="index, follow">
@@ -17,6 +18,7 @@
     <meta property="og:image" content="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#141519" />
+    <link rel="manifest" href="/manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
@@ -25,7 +27,13 @@
 
 <body>
     <div id="root"></div>
+    <noscript>Hiruki will not work properly with JavaScript disabled!</noscript>
     <script type="module" src="/src/index.jsx"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/sw.js");
+        }
+    </script>
 </body>
 
 </html>
