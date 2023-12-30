@@ -21,9 +21,22 @@ export default function View(props) {
                                             <div className="absolute top-0 flex flex-col gap-2 p-4">
                                                 <h2 className="text-white text-2xl font-semibold">{e.title.romaji}</h2>
                                                 <div className="flex items-center gap-2">
-                                                    <p className="text-white text-sm font-semibold">{e.format}</p>
+                                                    <p className="text-white text-sm font-semibold">
+                                                        {e.format === "TV_SHORT" ? "TV Short"
+                                                            : e.format === "MOVIE" ? "Movie"
+                                                                : e.format === "SPECIAL" ? "Special"
+                                                                    : e.format === "MUSIC" ? "Music"
+                                                                        : e.format === "MANGA" ? "Manga"
+                                                                            : e.format === "NOVEL" ? "Novel"
+                                                                                : e.format === "ONE_SHOT" ? "One Shot"
+                                                                                    : e.format}</p>
                                                     <span className="text-white text-opacity-50 text-sm">❖</span>
-                                                    <p className="text-white text-sm font-semibold">{e.status}</p>
+                                                    <p className="text-white text-sm font-semibold">
+                                                        {e.status === "FINISHED" ? "Finished"
+                                                            : e.status === "RELEASING" ? "Releasing"
+                                                                : e.status === "NOT_YET_RELEASED" ? "TBA"
+                                                                    : e.status === "CANCELLED" ? "Cancelled"
+                                                                        : e.status}</p>
                                                 </div>
                                                 <p innerHTML={e.description}
                                                     className="text-white text-opacity-75 w-full h-36 

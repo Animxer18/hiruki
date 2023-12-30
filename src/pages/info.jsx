@@ -41,11 +41,11 @@ export default function Info(props) {
                             loading="eager" width="500" height="300"
                             className="w-52 h-72 object-cover rounded-md" />
                         <A href={info().siteUrl} target="_blank"
-                            className="text-white bg-subackground border-primary border-2 w-52 rounded-md 
-                                pt-0.5 pb-1 px-2 hover:bg-primary">View on Anilist</A>
+                            className="text-white bg-primary w-52 rounded-md 
+                                pt-0.5 pb-1 px-2 hover:bg-opacity-75">View on Anilist</A>
                         <A href={"https://myanimelist.net/anime/" + info().idMal} target="_blank"
-                            className="text-white bg-subackground border-primary border-2 w-52 rounded-md 
-                                pt-0.5 pb-1 px-2 hover:bg-primary">View on MAL</A>
+                            className="text-white bg-primary w-52 rounded-md 
+                            pt-0.5 pb-1 px-2 hover:bg-opacity-75">View on MAL</A>
                     </div>
                     <div className="flex md:flex-1 flex-col gap-2">
                         <Show when={info().season && info().year}
@@ -55,7 +55,15 @@ export default function Info(props) {
                         <h2 className="text-white text-2xl font-bold">{info().title.romaji}</h2>
                         <div className="flex flex-row items-center gap-2">
                             <Show when={info().format}>
-                                <p className="text-white text-base opacity-50">{info().format}</p>
+                                <p className="text-white text-base opacity-50">
+                                    {info().format === "TV_SHORT" ? "TV Short"
+                                        : info().format === "MOVIE" ? "Movie"
+                                            : info().format === "SPECIAL" ? "Special"
+                                                : info().format === "MUSIC" ? "Music"
+                                                    : info().format === "MANGA" ? "Manga"
+                                                        : info().format === "NOVEL" ? "Novel"
+                                                            : info().format === "ONE_SHOT" ? "One Shot"
+                                                                : info().format}</p>
                                 <p className="text-white text-sm">❖</p>
                             </Show>
                             <Show when={info().status}>
@@ -88,11 +96,11 @@ export default function Info(props) {
                         </Show>
                         <div className="flex md:hidden flex-col items-center text-center gap-2">
                             <A href={info().siteUrl} target="_blank"
-                                className="text-white bg-subackground border-primary border-2 w-full rounded-md 
-                                pt-0.5 pb-1 px-2 hover:bg-primary">View on Anilist</A>
+                                className="text-white bg-primary w-full rounded-md 
+                                pt-0.5 pb-1 px-2 hover:bg-opacity-75">View on Anilist</A>
                             <A href={"https://myanimelist.net/anime/" + info().idMal} target="_blank"
-                                className="text-white bg-subackground border-primary border-2 w-full rounded-md 
-                                pt-0.5 pb-1 px-2 hover:bg-primary">View on MAL</A>
+                                className="text-white bg-primary w-full rounded-md 
+                                pt-0.5 pb-1 px-2 hover:bg-opacity-75">View on MAL</A>
                         </div>
                     </div>
                 </section>

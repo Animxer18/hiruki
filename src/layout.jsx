@@ -7,7 +7,7 @@ export default function Layout(props) {
                 <A href="/" className="text-primary text-3xl font-semibold lowercase hover:text-white">Hiruki</A>
                 <div className="flex items-center gap-4">
                     <A href="/" className="text-white text-sm font-medium hover:text-primary">Home</A>
-                    <A href="/" className="text-white text-sm font-medium hover:text-primary">Search</A>
+                    <A href="/search" className="text-white text-sm font-medium hover:text-primary">Search</A>
                 </div>
             </section>
             {props.children}

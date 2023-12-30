@@ -99,6 +99,19 @@ export function StreamLoader(props) {
             <section className="flex justify-center items-center py-4 px-4">
                 <div className="bg-white bg-opacity-25 w-full h-40 md:h-[450px] rounded-md animate-pulse" />
             </section>
+            <section className="flex justify-center items-center py-4 px-4">
+                <div className="bg-white bg-opacity-25 w-full h-10 rounded-md animate-pulse" />
+            </section>
+        </>
+    )
+}
+
+export function DownloadLoader(props) {
+    return (
+        <>
+            <section className="flex justify-center items-center py-4 px-4">
+                <div className="bg-white bg-opacity-25 w-full h-10 rounded-md animate-pulse" />
+            </section>
         </>
     )
 }

@@ -21,15 +21,22 @@ export default function Cards(props) {
                                                 className="w-40 h-56 md:w-52 md:h-72 object-cover rounded-md hover:scale-95" />
                                             <h2 className="text-white w-40 md:w-52 truncate">{e.title.romaji}</h2>
                                             <div className="flex w-40 md:w-52 justify-between items-center">
-                                                <p className="text-white text-sm text-opacity-50">{e.format}</p>
+                                                <p className="text-white text-sm text-opacity-50">
+                                                    {e.format === "TV_SHORT" ? "TV Short"
+                                                        : e.format === "MOVIE" ? "Movie"
+                                                            :e.format === "SPECIAL" ? "Special"
+                                                                : e.format === "MUSIC" ? "Music"
+                                                                    : e.format === "MANGA" ? "Manga"
+                                                                        : e.format === "NOVEL" ? "Novel"
+                                                                            : e.format === "ONE_SHOT" ? "One Shot"
+                                                                                : e.format}</p>
                                                 <Show when={e.seasonYear}
                                                     fallback={<p className="text-neutral-400 text-sm">
-                                                        {e.status === "FINISHED" ? "Finished" 
-                                                        : e.status === "RELEASING" ? "Releasing" 
-                                                        : e.status === "NOT_YET_RELEASED" ? "TBA" 
-                                                        : e.status === "CANCELLED" ? "Cancelled" 
-                                                        : e.status}
-                                                    </p>}>
+                                                        {e.status === "FINISHED" ? "Finished"
+                                                            : e.status === "RELEASING" ? "Releasing"
+                                                                : e.status === "NOT_YET_RELEASED" ? "TBA"
+                                                                    : e.status === "CANCELLED" ? "Cancelled"
+                                                                        : e.status}</p>}>
                                                     <p className="text-white text-sm text-opacity-50">{e.seasonYear}</p>
                                                 </Show>
                                             </div>

@@ -29,8 +29,8 @@ export default function Episodes(props) {
                                 <Show when={props.data.episodes.length > 24 && count() === 24}>
                                     <div className="w-full px-4">
                                         <button type="button" onClick={() => setCount(props.data.episodes.length)}
-                                            className="text-white bg-subackground w-full rounded-md 
-                                        py-1 hover:bg-primary">View More</button>
+                                            className="text-white bg-primary w-full rounded-md 
+                                        py-1 hover:bg-opacity-75">View More</button>
                                     </div>
                                 </Show>
                             </div>
