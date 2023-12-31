@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.hiruki.kenimaru.twa",
+      "sha256_cert_fingerprints": [
+        "88:8C:FD:B0:03:7C:8F:57:4A:82:B1:DA:40:CD:A2:F8:B6:F9:A1:23:E1:41:75:4D:F2:FF:6B:57:D4:86:E0:3E"
+      ]
+    }
+  }
+]
