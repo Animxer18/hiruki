@@ -32,7 +32,7 @@ export default function Info(props) {
                     <section className="flex justify-center items-center p-4">
                         <img src={info().bannerImage} alt={info().title.romaji} title={info().title.romaji}
                             loading="eager" width="500" height="300"
-                            className="w-full h-28 md:h-44 object-cover rounded-sm opacity-35" />
+                            className="w-full h-28 md:h-52 object-cover rounded-sm opacity-35" />
                     </section>
                 </Show>
                 <section className="flex flex-col md:flex-row items-center gap-4 p-4">

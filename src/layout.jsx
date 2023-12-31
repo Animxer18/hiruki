@@ -1,7 +1,10 @@
 import { createSignal } from "solid-js";
-import { A } from "@solidjs/router";
+import { A, useNavigate, useLocation } from "@solidjs/router";
 
 export default function Layout(props) {
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const [toggle, setToggle] = createSignal(false);
 
@@ -14,17 +17,34 @@ export default function Layout(props) {
                     <A href="/search" className="text-light text-sm font-medium hover:text-primary">Search</A>
                 </div>
             </section>
-            <div className="flex md:hidden fixed bottom-4 right-4 text-light bg-primary rounded-sm py-1 px-2">
-                <button type="button" onClick={() => setToggle(!toggle())}
-                    className="fa-solid fa-bars text-2xl"></button>
-            </div>
-            <div className={`${toggle() ? "flex md:hidden" : "hidden"} 
+            <section>
+                <div className="flex md:hidden fixed bottom-4 right-4 text-light bg-primary rounded-sm py-1 px-2">
+                    <button type="button" onClick={() => setToggle(!toggle())}
+                        className="fa-solid fa-bars text-2xl"></button>
+                </div>
+                <div className={`${toggle() ? "flex md:hidden" : "hidden"} 
             flex-col fixed justify-start bottom-16 right-4 bg-primary rounded-sm gap-1 p-2`}>
-                <A href="/" className="text-light text-base font-medium rounded-sm pt-0.5 
+                    <A href="/" className="text-light text-base font-medium rounded-sm pt-0.5 
                 pb-1 px-4 hover:text-dark hover:bg-light">Home</A>
-                <A href="/search" className="text-light text-base font-medium rounded-sm pt-0.5 
+                    <A href="/search" className="text-light text-base font-medium rounded-sm pt-0.5 
                 pb-1 px-4 hover:text-dark hover:bg-light">Search</A>
-            </div>
+                </div>
+            </section>
+            <section className="flex justify-between items-center py-2 px-4">
+                <button type="button" disabled={location.pathname === "/"} onClick={() => navigate(-1)}
+                    className="fa-solid fa-arrow-left text-light bg-primary bg-opacity-25 rounded-sm 
+                py-2 px-4 hover:bg-primary disabled:cursor-not-allowed 
+                disabled:hover:bg-primary disabled:hover:bg-opacity-25" />
+                <div className="flex items-center gap-4">
+                    <img src="/terakomari.gif" alt="Hiruki" title="Hiruki"
+                        loading="eager" width="500" height="300"
+                        className="w-14 h-14 object-cover rounded-full" />
+                    <div className="flex flex-col">
+                        <h2 className="text-primary font-semibold">Share Hiruki</h2>
+                        <p className="text-light">to your friend</p>
+                    </div>
+                </div>
+            </section>
             {props.children}
             <section className="bg-subackground flex flex-col justify-center items-center gap-2 p-4">
                 <h1 className="text-light text-4xl font-semibold">Hiruki</h1>
