@@ -17,7 +17,7 @@ export default function Cards(props) {
                                     {(e, i) => (
                                         <A href={"/i/" + e.id} key={i()}>
                                             <img src={e.coverImage.large} alt={e.title.romaji} title={e.title.romaji}
-                                                loading="eager" width="500" height="300"
+                                                loading="eager" width="160" height="220"
                                                 className="w-40 h-56 md:w-52 md:h-72 object-cover rounded-sm hover:scale-95" />
                                             <h2 className="text-light w-40 md:w-52 truncate">{e.title.romaji}</h2>
                                             <div className="flex w-40 md:w-52 justify-between items-center">

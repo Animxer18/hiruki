@@ -18,12 +18,13 @@ export default function Layout(props) {
                 </div>
             </section>
             <section>
-                <div className="flex md:hidden fixed bottom-4 right-4 text-light bg-primary rounded-sm py-1 px-2">
-                    <button type="button" onClick={() => setToggle(!toggle())}
+                <div className="flex md:hidden fixed bottom-4 right-4 text-light bg-primary 
+                shadow-md rounded-sm py-1 px-2">
+                    <button type="button" aria-label="Menu" onClick={() => setToggle(!toggle())}
                         className="fa-solid fa-bars text-2xl"></button>
                 </div>
                 <div className={`${toggle() ? "flex md:hidden" : "hidden"} 
-            flex-col fixed justify-start bottom-16 right-4 bg-primary rounded-sm gap-1 p-2`}>
+            flex-col fixed justify-start bottom-16 right-4 bg-primary shadow-md rounded-sm gap-1 p-2`}>
                     <A href="/" className="text-light text-base font-medium rounded-sm pt-0.5 
                 pb-1 px-4 hover:text-dark hover:bg-light">Home</A>
                     <A href="/search" className="text-light text-base font-medium rounded-sm pt-0.5 
@@ -31,16 +32,16 @@ export default function Layout(props) {
                 </div>
             </section>
             <section className="flex justify-between items-center py-2 px-4">
-                <button type="button" disabled={location.pathname === "/"} onClick={() => navigate(-1)}
+                <button type="button" aria-label="Back" disabled={location.pathname === "/"} onClick={() => navigate(-1)}
                     className="fa-solid fa-arrow-left text-light bg-primary bg-opacity-25 rounded-sm 
                 py-2 px-4 hover:bg-primary disabled:cursor-not-allowed 
-                disabled:hover:bg-primary disabled:hover:bg-opacity-25" />
+                disabled:hover:bg-primary disabled:hover:bg-opacity-25"></button>
                 <div className="flex items-center gap-4">
                     <img src="/terakomari.gif" alt="Hiruki" title="Hiruki"
                         loading="eager" width="500" height="300"
                         className="w-14 h-14 object-cover rounded-full" />
                     <div className="flex flex-col">
-                        <h2 className="text-primary font-semibold">Share Hiruki</h2>
+                        <p className="text-primary font-semibold">Share Hiruki</p>
                         <p className="text-light">to your friend</p>
                     </div>
                 </div>
