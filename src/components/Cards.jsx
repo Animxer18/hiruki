@@ -9,7 +9,7 @@ export default function Cards(props) {
                 <Show when={props.data.results.length > 0}>
                     <section className="flex flex-col my-4">
                         <div className="flex justify-start items-center py-2 px-3 md:px-4">
-                            <h2 className="text-white text-xl font-medium">{props.container}</h2>
+                            <h2 className="text-light text-xl font-medium">{props.container}</h2>
                         </div>
                         <div className="flex justify-center items-center">
                             <div className="flex flex-wrap justify-center gap-4">
@@ -18,13 +18,13 @@ export default function Cards(props) {
                                         <A href={"/i/" + e.id} key={i()}>
                                             <img src={e.coverImage.large} alt={e.title.romaji} title={e.title.romaji}
                                                 loading="eager" width="500" height="300"
-                                                className="w-40 h-56 md:w-52 md:h-72 object-cover rounded-md hover:scale-95" />
-                                            <h2 className="text-white w-40 md:w-52 truncate">{e.title.romaji}</h2>
+                                                className="w-40 h-56 md:w-52 md:h-72 object-cover rounded-sm hover:scale-95" />
+                                            <h2 className="text-light w-40 md:w-52 truncate">{e.title.romaji}</h2>
                                             <div className="flex w-40 md:w-52 justify-between items-center">
-                                                <p className="text-white text-sm text-opacity-50">
+                                                <p className="text-light text-sm text-opacity-50">
                                                     {e.format === "TV_SHORT" ? "TV Short"
                                                         : e.format === "MOVIE" ? "Movie"
-                                                            :e.format === "SPECIAL" ? "Special"
+                                                            : e.format === "SPECIAL" ? "Special"
                                                                 : e.format === "MUSIC" ? "Music"
                                                                     : e.format === "MANGA" ? "Manga"
                                                                         : e.format === "NOVEL" ? "Novel"
@@ -37,7 +37,7 @@ export default function Cards(props) {
                                                                 : e.status === "NOT_YET_RELEASED" ? "TBA"
                                                                     : e.status === "CANCELLED" ? "Cancelled"
                                                                         : e.status}</p>}>
-                                                    <p className="text-white text-sm text-opacity-50">{e.seasonYear}</p>
+                                                    <p className="text-light text-sm text-opacity-50">{e.seasonYear}</p>
                                                 </Show>
                                             </div>
                                         </A>

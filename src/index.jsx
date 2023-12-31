@@ -2,7 +2,7 @@ import { render } from "solid-js/web";
 import { Router, Route } from "@solidjs/router";
 import "./assets/global.css";
 import Layout from "./layout";
-import Error from "./pages/error";
+import Error from "./pages/404";
 import Landing from "./pages/index";
 import Search from "./pages/search";
 import Info from "./pages/info";

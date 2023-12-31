@@ -30,11 +30,11 @@ export default function Stream(props) {
             <Show when={stream() && !stream.loading}>
                 <section className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 py-2 px-3 md:px-4">
                     <div className="flex flex-col">
-                        <h2 className="text-white text-xl font-medium">{stream().info.title}</h2>
-                        <p className="text-white text-base text-opacity-50">
+                        <h2 className="text-light text-xl font-medium">{stream().info.title}</h2>
+                        <p className="text-light text-base text-opacity-50">
                             Currently watching episode {stream().info.episode}</p>
                     </div>
-                    <A href={"/i/" + query.id} className="text-white bg-fail text-center rounded-md w-full md:w-auto
+                    <A href={"/i/" + query.id} className="text-light bg-primary text-center rounded-sm w-full md:w-auto
                         pt-0.5 pb-1 px-2 hover:bg-opacity-75">Go Back</A>
                 </section>
                 <section className="flex justify-center items-center py-4 px-4">
@@ -42,13 +42,13 @@ export default function Stream(props) {
                         src={stream().plyr.main}
                         frameborder="0"
                         allowFullScreen={true}
-                        className="w-full h-40 md:h-[450px] rounded-md" />
+                        className="w-full h-40 md:h-[450px] rounded-sm" />
                 </section>
                 <Show when={!download.loading} fallback={<DownloadLoader />} />
                 <Show when={download() && !download.loading}>
                     <section className="flex justify-center items-center py-4 px-4">
                         <A href={download().download} target="_blank"
-                            className="text-white bg-success text-center rounded-md w-full
+                            className="text-light bg-primary text-center rounded-sm w-full
                         pt-1 pb-1.5 px-2 hover:bg-opacity-75">Download Episode</A>
                     </section>
                 </Show>

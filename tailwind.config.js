@@ -7,13 +7,11 @@ export default {
                 "outfit": ["Outfit", "sans-serif"]
             },
             colors: {
-                "background": "#141519",
-                "subackground": "#0C0D10",
-                "primary": "#2563EB",
-                "secondary": "#1D4ED8",
-                "success": "#16A34A",
-                "fail": "#DC2626",
-                "warning": "#D97706"
+                "background": "#18181b",
+                "subackground": "#09090b",
+                "dark": "#09090b",
+                "light": "#f4f4f5",
+                "primary": "#d4031f"
             }
         }
     },

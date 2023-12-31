@@ -19,7 +19,7 @@ export default function Landing(props) {
         <>
             <View data={trending()} />
             <Cards container="Trending Now" data={trending()} />
-            <Cards container="All Time Popular" data={popular()} />
+            <Cards container="Most Popular" data={popular()} />
         </>
     )
 }

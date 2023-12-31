@@ -33,13 +33,14 @@ export default function Search(props) {
     return (
         <>
             <section className="flex flex-col justify-center items-center gap-4 my-8">
-                <h2 className="text-white text-2xl font-medium">Search</h2>
-                <form className="flex flex-col md:flex-row items-center gap-4" onSubmit={(e) => onSubmit(e)}>
+                <h2 className="text-light text-2xl font-medium">Search</h2>
+                <form className="flex flex-col md:flex-row justify-center items-center 
+                w-full gap-4 px-4" onSubmit={(e) => onSubmit(e)}>
                     <input type="text" placeholder="Search" onInput={(e) => setInput(e.target.value)}
-                        className="text-white bg-subackground 
-                    w-full md:w-96 outline-none rounded-md pt-2.5 pb-3 px-2" />
+                        className="text-light bg-subackground w-full md:w-96 outline-none rounded-sm pt-2.5 pb-3 px-4" />
                     <button type="submit"
-                        className="text-white bg-primary rounded-md pt-1.5 pb-2 md:pt-2.5 md:pb-3 px-4">Search</button>
+                        className="text-light bg-primary rounded-sm 
+                        pt-1.5 pb-2 md:pt-2.5 md:pb-3 px-4 hover:bg-opacity-75">Search</button>
                 </form>
             </section>
             <Show when={query.q}>
@@ -52,7 +53,7 @@ export default function Search(props) {
                         <div className="flex flex-col items-center text-center gap-4 p-4">
                             <div className="flex flex-col">
                                 <h2 className="text-primary text-6xl font-bold animate-bounce">No Result</h2>
-                                <p className="text-white text-lg">No result found...</p>
+                                <p className="text-light text-lg">No result found...</p>
                             </div>
                         </div>
                     </section>
