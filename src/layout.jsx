@@ -50,7 +50,7 @@ export default function Layout(props) {
             <section className="bg-subackground flex flex-col gap-4 p-4">
                 <div className="flex flex-col md:flex-row justify-around md:items-center gap-8">
                     <div className="flex flex-col">
-                        <h2 className="text-light text-3xl font-bold lowercase">Hiruki</h2>
+                        <h1 className="text-light text-3xl font-bold lowercase">Hiruki</h1>
                         <p className="text-light text-sm text-opacity-75 md:w-96">
                             This site does not store any files on our server,
                             we only linked to the media which is hosted on 3rd party services.</p>
@@ -73,14 +73,8 @@ export default function Layout(props) {
                     </div>
                 </div>
                 <hr className="border-light border-opacity-50" />
-                <div className="flex justify-between items-center">
+                <div className="flex justify-center items-center">
                     <p className="text-light text-sm">&copy;{new Date().getFullYear()}. Hiruki</p>
-                    <div className="flex items-center gap-2">
-                        <A href="https://github.com/Kenimarru/hiruki" target="_blank"
-                            className="text-light text-xl font-medium hover:text-primary">
-                            <i class="fa-brands fa-github"></i>
-                        </A>
-                    </div>
                 </div>
             </section>
         </>

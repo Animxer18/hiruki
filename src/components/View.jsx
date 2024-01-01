@@ -18,7 +18,7 @@ export default function View(props) {
                                         <div key={i()} className="relative">
                                             <img src={e.bannerImage} alt={e.title.romaji} title={e.title.romaji}
                                                 loading="eager" width="100%" height="100"
-                                                className="w-full object-cover rounded-sm opacity-35" />
+                                                className="w-full md:h-64 lg:h-64 object-cover rounded-sm opacity-35" />
                                             <div className="absolute top-0 flex flex-col gap-2 p-4">
                                                 <h2 className="text-light text-2xl font-semibold">{e.title.romaji}</h2>
                                                 <div className="flex items-center gap-2">
