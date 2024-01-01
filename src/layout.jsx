@@ -42,17 +42,46 @@ export default function Layout(props) {
                         className="w-14 h-14 object-cover rounded-full" />
                     <div className="flex flex-col">
                         <p className="text-primary font-semibold">Share Hiruki</p>
-                        <p className="text-light">to your friend</p>
+                        <p className="text-light">to your friends</p>
                     </div>
                 </div>
             </section>
             {props.children}
-            <section className="bg-subackground flex flex-col justify-center items-center gap-2 p-4">
-                <h1 className="text-light text-4xl font-semibold">Hiruki</h1>
-                <p className="text-light text-sm text-center text-opacity-50">
-                    This site does not store any files on our server,
-                    we only linked to the media which is hosted on 3rd party services.</p>
-                <p className="text-light text-sm text-center">&copy;{new Date().getFullYear()}. Hiruki</p>
+            <section className="bg-subackground flex flex-col gap-4 p-4">
+                <div className="flex flex-col md:flex-row justify-around md:items-center gap-8">
+                    <div className="flex flex-col">
+                        <h2 className="text-light text-3xl font-bold lowercase">Hiruki</h2>
+                        <p className="text-light text-sm text-opacity-75 md:w-96">
+                            This site does not store any files on our server,
+                            we only linked to the media which is hosted on 3rd party services.</p>
+                    </div>
+                    <div className="flex flex-col md:flex-row justify-between gap-2 md:gap-8">
+                        <div className="flex flex-col">
+                            <A href="https://hiruki.xyz"
+                                className="text-light text-base md:text-sm font-medium hover:text-primary">Hiruki.xyz</A>
+                            <A href="/"
+                                className="text-light text-base md:text-sm font-medium hover:text-primary">Home</A>
+                            <A href="/search"
+                                className="text-light text-base md:text-sm font-medium hover:text-primary">Search</A>
+                        </div>
+                        <div className="flex flex-col">
+                            <A href="/"
+                                className="text-light text-base md:text-sm font-medium hover:text-primary">DMCA</A>
+                            <A href="https://github.com/Kenimarru/hiruki" target="_blank"
+                                className="text-light text-base md:text-sm font-medium hover:text-primary">Github</A>
+                        </div>
+                    </div>
+                </div>
+                <hr className="border-light border-opacity-50" />
+                <div className="flex justify-between items-center">
+                    <p className="text-light text-sm">&copy;{new Date().getFullYear()}. Hiruki</p>
+                    <div className="flex items-center gap-2">
+                        <A href="https://github.com/Kenimarru/hiruki" target="_blank"
+                            className="text-light text-xl font-medium hover:text-primary">
+                            <i class="fa-brands fa-github"></i>
+                        </A>
+                    </div>
+                </div>
             </section>
         </>
     )
